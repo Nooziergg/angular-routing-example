@@ -1,18 +1,25 @@
 import { NgModule } from '@angular/core';
-    import { RouterModule, Routes } from '@angular/router';
-    import { Child1Component } from './child1/child1.component';
-    import { Child2Component } from './child2/child2.component';
-    const routes: Routes = [
+import { RouterModule, Routes } from '@angular/router';
+import { FatherComponent } from './father/father.component';
+import { Child1Component } from './child1/child1.component';
+import { Child2Component } from './child2/child2.component';
+
+const routes: Routes = [
+  {
+    path: '', // Caminho base para modulo1
+    component: FatherComponent,
+    children: [
       { path: 'child1', component: Child1Component },
       { path: 'child2', component: Child2Component }
-    ];
+    ]
+  }
+];
 
-    @NgModule({
-      imports: [RouterModule.forChild(routes)],
-      exports: [RouterModule]
-    })
-    export class Modulo1RoutingModule { }
-
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class Modulo1RoutingModule { }
 
 //O que é um módulo no Angular?
 //Um módulo no Angular é uma coleção de componentes, diretivas, pipes e serviços relacionados que são agrupados em um único contexto.

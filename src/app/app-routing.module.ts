@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   { path: 'modulo1', loadChildren: () => import('./modulo1/modulo1.module').then(m => m.Modulo1Module) },
   { path: 'modulo2', loadChildren: () => import('./modulo2/modulo2.module').then(m => m.Modulo2Module) },
   { path: 'modulo3', loadChildren: () => import('./modulo3/modulo3.module').then(m => m.Modulo3Module) },
-  { path: '', redirectTo: '/modulo1/child1', pathMatch: 'full' },  // Rota padrão
-  { path: '**', redirectTo: '/modulo2/child2' }  // Rota coringa (wildcard route)
+  { path: '', component: HomeComponent, pathMatch: 'full' },  // Rota padrão
+  { path: '**', component: NotFoundComponent }  // Rota coringa (wildcard route)
 ];
 //Explicação do código acima:
 //As rotas são definidas como um array de objetos, onde cada objeto representa uma rota.
