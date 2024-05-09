@@ -1,0 +1,49 @@
+.global-template {
+  border: 1px solid #ccc; /* borda com 1 pixel de espessura e cor cinza claro */
+  border-radius: 8px; /* bordas arredondadas com raio de 8 pixels */
+  padding: 20px; /* espaçamento interno de 20 pixels */
+  margin: 10px; /* espaçamento externo de 10 pixels */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra com deslocamento horizontal de 0, deslocamento vertical de 4 pixels, desfoque de 8 pixels e cor preta com transparência de 0.1 */
+  background-color: #f9f9f9; /* cor de fundo cinza claro */
+}
+
+.global-template .header h2 {
+  color: #333; /* cor do texto preto */
+}
+
+.global-template .content p {
+  font-size: 16px; /* tamanho da fonte de 16 pixels */
+}
+
+.global-template button {
+  background-color: #4CAF50; /* cor de fundo verde */
+  color: white; /* cor do texto branco */
+  border: none; /* sem borda */
+  padding: 10px 20px; /* espaçamento interno de 10 pixels na vertical e 20 pixels na horizontal */
+  margin: 10px 0; /* espaçamento externo de 10 pixels na vertical e 0 na horizontal */
+  cursor: pointer; /* cursor de mouse como ponteiro */
+  border-radius: 4px; /* bordas arredondadas com raio de 4 pixels */
+}
+
+.global-template button:hover {
+  background-color: #45a049; /* cor de fundo verde mais escura quando o botão é hover */
+}
+.global-template table {
+  width: 100%; /* Garante que a tabela utilize a largura total do seu container */
+  border-collapse: collapse; /* Remove o espaço entre as bordas */
+}
+
+.global-template th, .global-template td {
+  border: 1px solid #ddd; /* Adiciona uma borda leve às células da tabela */
+  padding: 8px; /* Espaçamento interno das células da tabela */
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+.global-template thead th {
+  background-color: #f4f4f4; /* Adiciona uma cor de fundo às células do cabeçalho */
+  color: #333; /* Cor do texto para os cabeçalhos */
+}
+
+.global-template tbody tr:nth-child(odd) {
+  background-color: #fafafa; /* Adiciona um efeito listrado à tabela */
+}

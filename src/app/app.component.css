@@ -1,0 +1,49 @@
+/* Estilização geral para o dropdown */
+.dropdown {
+  position: relative; /* Define a posição do elemento como relativa */
+  display: inline-block; /* Define o elemento como um bloco em linha */
+}
+
+/* Estiliza o botão que abre o dropdown */
+.dropbtn {
+  background-color: #4CAF50; /* Cor de fundo verde para o botão do dropdown */
+  color: white; /* Cor do texto */
+  padding: 10px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  border: none; /* Remove a borda */
+  cursor: pointer; /* Altera o cursor para o estilo de ponteiro */
+}
+
+/* Conteúdo do dropdown (links) - oculto por padrão */
+.dropdown-content {
+  display: none; /* Oculta o conteúdo do dropdown */
+  position: absolute; /* Define a posição do elemento como absoluta */
+  background-color: #f9f9f9; /* Cor de fundo cinza claro para o dropdown */
+  min-width: 160px; /* Largura mínima do dropdown */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Sombra para efeito de dropdown */
+  z-index: 1; /* Define a ordem de empilhamento do elemento */
+}
+
+/* Links dentro do dropdown */
+.dropdown-content a {
+  color: black; /* Cor do texto */
+  padding: 12px 16px; /* Espaçamento interno */
+  text-decoration: none; /* Remove a decoração de texto */
+  display: block; /* Exibe os links como blocos */
+  border-bottom: 1px solid #ddd; /* Borda entre os links */
+}
+
+/* Altera a cor dos links do dropdown ao passar o mouse */
+.dropdown-content a:hover {
+  background-color: #ddd; /* Cor de fundo ao passar o mouse */
+}
+
+/* Mostra o conteúdo do dropdown ao passar o mouse */
+.dropdown:hover .dropdown-content {
+  display: block; /* Exibe o conteúdo do dropdown */
+}
+
+/* Adiciona uma cor de fundo ao botão do dropdown ao passar o mouse */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41; /* Cor de fundo ao passar o mouse */
+}

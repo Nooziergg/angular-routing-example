@@ -1,0 +1,25 @@
+<div class="global-template">
+  <div class="header">
+    <h2>{{ titulo }}</h2>
+  </div>
+  <div class="content">
+    <ng-content></ng-content>
+    <button (click)="mostrarDetalhes()">Aprenda Mais</button>
+    <div *ngIf="mostraDetalhes">
+      <table *ngIf="detalhes && detalhes.length > 0">
+        <thead>
+          <tr>
+            <th>{{Chave}}</th>
+            <th>{{Valor}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of detalhes">
+            <td>{{ item.chave }}</td>
+            <td>{{ item.valor }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
