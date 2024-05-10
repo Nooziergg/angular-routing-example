@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-global-template',
@@ -10,12 +10,25 @@ export class GlobalTemplateComponent {
   @Input() detalhes: any[] = []; // Array de objetos, aonde não temos definição da estrutura do objeto
   @Input() Chave : string = 'Chave';
   @Input() Valor : string = 'Valor';
+  @Output() onAddNew = new EventEmitter<{data: any}>(); // Evento que será emitido quando o botão de adicionar novo for clicado
+
 
   mostraDetalhes: boolean = false;
+  dataValue: string = '';
 
   mostrarDetalhes() {
     this.mostraDetalhes = !this.mostraDetalhes;
   }
+  adicionarNovo() {
+   //Este método será sobrescrito em um componente filho
+   this.onAddNew.emit({ data: this.dataValue });
+  }
+
+  public limpar() {
+    this.dataValue = '';
+  }
+
+
 }
 
 

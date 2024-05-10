@@ -1,7 +1,10 @@
 <h1 style="color: blue;">Componente Pai Modulo 1</h1>
+<input type="text" style="margin-left: 25px;" [(ngModel)]="id" placeholder="Digite o ID para o filho 1">
 <nav>
   <ul>
-    <li><a routerLink="child1" style="color: red;">Filho 1 - Modulo 1</a></li>
+    <li *ngIf="id">
+      <a  [routerLink]="['/modulo1/child1', id]" style="color: red;">Filho 1 - Modulo 1</a>
+    </li>
     <li><a routerLink="child2" style="color: green;">Filho 2 - Modulo 2</a></li>
   </ul>
 </nav>

@@ -1,3 +1,3 @@
-<app-global-template [titulo]="titulo" [detalhes]="detalhes" [Chave]="Chave" [Valor]="Valor">
-  <p>Conteúdo do módulo filho 01</p>
+<app-global-template [titulo]="titulo" [detalhes]="detalhes" [Chave]="Chave" [Valor]="Valor" (onAddNew)="adicionarConteudo($event.data)">
+  <p>Conteúdo do módulo filho 01 para o usuário com ID: {{id}}</p>
 </app-global-template>

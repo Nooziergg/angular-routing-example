@@ -9,12 +9,15 @@ import { SharedModule } from './shared/shared.module';
 import { ApiService } from './services/api.service';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
       useClass: ApiInterceptor,
       multi: true
     },
-    ApiService
+    ApiService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

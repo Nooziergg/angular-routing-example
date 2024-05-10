@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-routing-example';
+
+  constructor(private authService: AuthService) {}
+
+  estaLogado(): boolean {
+    return this.authService.isLoggedIn();
+  }
+
+  logout() {
+    this.authService.logout();
+  }
+
 }

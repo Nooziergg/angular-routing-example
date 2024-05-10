@@ -1,6 +1,10 @@
 <div class="global-template">
   <div class="header">
     <h2>{{ titulo }}</h2>
+    <div>
+      <input [(ngModel)]="dataValue" placeholder="Digite um valor" />
+      <button (click)="adicionarNovo()">Adicionar Novo</button>
+    </div>
   </div>
   <div class="content">
     <ng-content></ng-content>
@@ -9,8 +13,8 @@
       <table *ngIf="detalhes && detalhes.length > 0">
         <thead>
           <tr>
-            <th>{{Chave}}</th>
-            <th>{{Valor}}</th>
+            <th>{{ Chave }}</th>
+            <th>{{ Valor }}</th>
           </tr>
         </thead>
         <tbody>

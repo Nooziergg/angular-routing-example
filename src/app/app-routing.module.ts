@@ -2,13 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { authGuard } from './guards/auth.guard';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: 'modulo1', loadChildren: () => import('./modulo1/modulo1.module').then(m => m.Modulo1Module) },
-  { path: 'modulo2', loadChildren: () => import('./modulo2/modulo2.module').then(m => m.Modulo2Module) },
-  { path: 'modulo3', loadChildren: () => import('./modulo3/modulo3.module').then(m => m.Modulo3Module) },
-  { path: '', component: HomeComponent, pathMatch: 'full' },  // Rota padrão
-  { path: '**', component: NotFoundComponent }  // Rota coringa (wildcard route)
+  { path: 'login', component: LoginComponent }, // Rota para o componente de login
+  { path: 'modulo1', canActivate: [authGuard], loadChildren: () => import('./modulo1/modulo1.module').then(m => m.Modulo1Module) },
+  { path: 'modulo2', canActivate: [authGuard], loadChildren: () => import('./modulo2/modulo2.module').then(m => m.Modulo2Module) },
+  { path: 'modulo3', canActivate: [authGuard], loadChildren: () => import('./modulo3/modulo3.module').then(m => m.Modulo3Module) },
+  { path: '',canActivate: [authGuard], component: HomeComponent, pathMatch: 'full' }, // Rota padrão
+  { path: '**', component: NotFoundComponent } // Rota coringa para página não encontrada
 ];
 //Explicação do código acima:
 //As rotas são definidas como um array de objetos, onde cada objeto representa uma rota.

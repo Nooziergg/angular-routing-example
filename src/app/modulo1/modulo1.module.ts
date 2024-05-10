@@ -1,6 +1,5 @@
 // Modulo1Module
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Modulo1RoutingModule } from './modulo1-routing.module';
 import { Child1Component } from './child1/child1.component';
 import { Child2Component } from './child2/child2.component';
@@ -15,9 +14,8 @@ import { FatherComponent } from './father/father.component';
     FatherComponent
   ],
   imports: [
-    CommonModule,
     Modulo1RoutingModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class Modulo1Module { }

@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '', // Caminho base para modulo1
     component: FatherComponent,
     children: [
-      { path: 'child1', component: Child1Component },
+      { path: 'child1/:id', component: Child1Component },
       { path: 'child2', component: Child2Component }
     ]
   }
